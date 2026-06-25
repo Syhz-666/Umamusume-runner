@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" path="res://草上飞.png" id="6_csf_tex"]
 
 [sub_resource type="RectangleShape2D" id="player_shape"]
-size = Vector2(50, 50)
+size = Vector2(42.5, 50)
 
 [node name="Main" type="Node2D" unique_id=468225803]
 
