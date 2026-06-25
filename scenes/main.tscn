@@ -71,14 +71,29 @@ offset_right = 945.0
 offset_bottom = 65.0
 color = Color(0.15, 0.15, 0.15, 0.8)
 
-[node name="FHint" type="Label" parent="HUD"]
-offset_left = 895.0
-offset_top = 68.0
-offset_right = 945.0
-offset_bottom = 86.0
+[node name="InstrPC" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 90.0
+offset_right = 200.0
+offset_bottom = 110.0
 theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
 theme_override_font_sizes/font_size = 14
-text = "F"
+text = "PC: Space=Jump  F=Grass Wonder"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InstrMobile" type="Label" parent="HUD"]
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 115.0
+offset_right = 200.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(0.2, 0.2, 0.2, 1)
+theme_override_font_sizes/font_size = 14
+text = "Mobile: Left Tap=Jump  Right Tap=Grass Wonder"
 horizontal_alignment = 1
 vertical_alignment = 1
 

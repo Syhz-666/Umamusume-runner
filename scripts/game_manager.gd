@@ -4,6 +4,9 @@ var score: float = 0.0
 var base_speed: float = 300.0
 var is_game_over: bool = false
 var fireball_cooldown: float = 0.0
+var touch_jump: bool = false
+var touch_shoot: bool = false
+var game_running: bool = false
 const COOLDOWN_MAX: float = 5.0
 
 signal game_started
@@ -18,6 +21,7 @@ func start_game() -> void:
 	base_speed = 300.0
 	is_game_over = false
 	fireball_cooldown = 0.0
+	game_running = false
 	game_started.emit()
 
 func end_game() -> void:

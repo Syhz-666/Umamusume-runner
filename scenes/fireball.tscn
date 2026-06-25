@@ -14,7 +14,7 @@ script = ExtResource("1_fb")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_csf_tex")
 scale = Vector2(0.098, 0.098)
-rotation = -1.5708
+rotation = 1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("rect_fb")

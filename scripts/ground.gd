@@ -6,7 +6,7 @@ const GROUND_H: float = 40.0
 const WRAP_LIMIT: float = -TILE_WIDTH * 1.5
 
 func _process(delta: float) -> void:
-	if GameManager.is_game_over:
+	if GameManager.is_game_over or not GameManager.game_running:
 		return
 	var speed = GameManager.get_speed()
 	for i in range(tiles.size()):

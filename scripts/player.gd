@@ -16,18 +16,25 @@ func _physics_process(delta: float) -> void:
 		return
 
 	if not has_started:
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("ui_accept") or GameManager.touch_jump or GameManager.touch_shoot:
 			has_started = true
+			GameManager.game_running = true
+		GameManager.touch_jump = false
+		GameManager.touch_shoot = false
 		return
 
 	GameManager.score += delta * 10.0
 	velocity_y += GRAVITY * delta
 
-	if Input.is_action_just_pressed("ui_accept") and global_position.y >= GROUND_Y:
+	var want_jump = Input.is_action_just_pressed("ui_accept") or GameManager.touch_jump
+	if want_jump and global_position.y >= GROUND_Y:
 		velocity_y = JUMP_VELOCITY
+	GameManager.touch_jump = false
 
-	if Input.is_action_just_pressed("shoot") and GameManager.fireball_cooldown <= 0.0:
+	var want_shoot = Input.is_action_just_pressed("shoot") or GameManager.touch_shoot
+	if want_shoot and GameManager.fireball_cooldown <= 0.0:
 		_shoot_fireball()
+	GameManager.touch_shoot = false
 
 	global_position.y += velocity_y * delta
 	if global_position.y > GROUND_Y:

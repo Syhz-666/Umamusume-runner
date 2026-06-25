@@ -9,7 +9,7 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timeout)
 
 func _on_timeout() -> void:
-	if GameManager.is_game_over:
+	if GameManager.is_game_over or not GameManager.game_running:
 		return
 	spawn()
 	var interval = randf_range(0.8, 2.2) * (300.0 / GameManager.get_speed())
