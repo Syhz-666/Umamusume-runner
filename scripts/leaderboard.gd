@@ -1,6 +1,6 @@
 extends Node
 
-const SAVE_PATH = "res://scores.json"
+const SAVE_PATH = "user://scores.json"
 var scores: Array = []
 
 func _ready() -> void:
