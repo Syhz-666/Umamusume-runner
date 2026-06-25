@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/obstacle.gd" id="1_obs"]
+
+[sub_resource type="RectangleShape2D" id="rect_obs"]
+size = Vector2(30, 40)
+
+[node name="Obstacle" type="Area2D"]
+collision_layer = 1
+collision_mask = 2
+script = ExtResource("1_obs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("rect_obs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false

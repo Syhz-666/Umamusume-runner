@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/coin.gd" id="1_coin"]
+[ext_resource type="Texture2D" path="res://特别周.webp" id="2_coin_tex"]
+
+[sub_resource type="RectangleShape2D" id="rect_coin"]
+size = Vector2(20, 20)
+
+[node name="Coin" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_coin")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_coin_tex")
+scale = Vector2(0.167, 0.167)
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("rect_coin")
